@@ -71,7 +71,7 @@ module CollectiveIdea #:nodoc:
           # don't allow multiple calls
           return if self.included_modules.include?(CollectiveIdea::Acts::Audited::InstanceMethods)
 
-          options = {:protect => accessible_attributes.nil?}.merge(options)
+          options = {:protect => accessible_attributes.present?}.merge(options)
 
           class_inheritable_reader :non_audited_columns
           class_inheritable_reader :auditing_enabled
