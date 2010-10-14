@@ -91,7 +91,7 @@ module CollectiveIdea #:nodoc:
           end
 
           attr_accessor :audit_comment
-          unless accessible_attributes.present? || options[:protect]
+          unless accessible_attributes.blank? or options[:protect]
             attr_accessible :audit_comment
           end
 
